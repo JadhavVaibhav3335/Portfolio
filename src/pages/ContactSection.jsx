@@ -29,14 +29,13 @@ export default function ContactSection() {
 
   toast.loading("Sending message...", { id: "sending" });
   setLoading(true);
+emailjs.send(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  params,
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+)
 
-  emailjs
-    .send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      params,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
     .then(
       () => {
         toast.success("Message sent successfully!", { id: "sending" });
