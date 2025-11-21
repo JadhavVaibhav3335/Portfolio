@@ -31,10 +31,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-6">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don’t look even slightly
-            believable.
+          I'm Vaibhav, a seasoned Fullstack developer driven by the thrill of building robust and dynamic web applications. With expertise spanning both frontend and backend technologies, I infuse projects with versatility and depth, delivering solutions that stand the test of time.
           </p>
 
           <p className="text-gray-300 leading-relaxed mb-8">
