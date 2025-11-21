@@ -33,10 +33,9 @@ export default function AboutSection() {
           <p className="text-gray-300 leading-relaxed mb-6">
           I'm Vaibhav, a seasoned Fullstack developer driven by the thrill of building robust and dynamic web applications. With expertise spanning both frontend and backend technologies, I infuse projects with versatility and depth, delivering solutions that stand the test of time.
           </p>
-
+            I enjoy learning, experimenting, and improving my craft daily. For me, development isn’t just writing code — it’s designing experiences, shaping logic, and building things that people can actually use.
           <p className="text-gray-300 leading-relaxed mb-8">
-            If you are going to use a passage of Lorem Ipsum, you need to be
-            sure there isn’t anything embarrassing hidden in the middle of text.
+         
           </p>
 
   <a
