@@ -12,32 +12,32 @@ const services = [
   {
     icon: <Laptop size={42} />,
     title: "Web Design",
-    desc: "am an expert web designer and developer. Contrary to popular belief, Lorem Ipsum is not simply random text. It has",
+    desc: "I design clean, modern, user-focused layouts that balance aesthetics with usability. Every page is crafted to feel intuitive, fast, and visually engaging.",
   },
   {
     icon: <Code size={42} />,
     title: "Web Development",
-    desc: "am an expert web designer and developer. Contrary to popular belief, Lorem Ipsum is not simply random text. It has",
+    desc: "I build scalable and maintainable web applications using modern tech stacks. From APIs to dynamic UI, I focus on performance, security, and clean architecture.",
   },
   {
     icon: <Palette size={42} />,
     title: "Creative Design",
-    desc: "am an expert web designer and developer. Contrary to popular belief, Lorem Ipsum is not simply random text. It has",
+    desc: "I create visually compelling designs that communicate your brand's message effectively. My approach combines creativity with strategic thinking to deliver impactful results.",
   },
   {
     icon: <Smartphone size={42} />,
     title: "Responsive Design",
-    desc: "am an expert web designer and developer. Contrary to popular belief, Lorem Ipsum is not simply random text. It has",
+    desc: "I ensure your website looks and functions perfectly on all devices, from desktops to smartphones. My responsive designs provide seamless user experiences across various screen sizes.",
   },
   {
     icon: <BadgeCheck size={42} />,
     title: "Branding Identity",
-    desc: "am an expert web designer and developer. Contrary to popular belief, Lorem Ipsum is not simply random text. It has",
+    desc: "I develop strong branding identities that resonate with your target audience. From logos to brand guidelines, I help create a cohesive and memorable brand presence.",
   },
   {
     icon: <Headset size={42} />,
     title: "24/Support",
-    desc: "am an expert web designer and developer. Contrary to popular belief, Lorem Ipsum is not simply random text. It has",
+    desc: "I provide reliable 24/7 support to ensure your website runs smoothly. Whether it's troubleshooting, updates, or maintenance, I'm here to help you keep your online presence strong.",
   },
 ];
 

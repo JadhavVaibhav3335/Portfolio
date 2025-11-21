@@ -62,7 +62,7 @@ export default function Navbar() {
 
         {/* LOGO */}
         <div className="text-2xl font-bold tracking-widest text-white select-none">
-          VJ
+          Portfolio
         </div>
 
         {/* DESKTOP NAV */}
