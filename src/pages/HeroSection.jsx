@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImg from "../assets/Images/profile-img.jpg";
+import profileImg from "../assets/Images/profile-img.png";
 import { ArrowDownRight, Download, Github, Instagram, Linkedin } from "lucide-react";
 import { useMemo } from "react";
 import useTypewriter from "../hooks/useTypewriter";

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, BookOpenText, Rocket, Sparkles } from "lucide-react";
-import aboutImg from "../assets/Images/About-img.jpg";
+import aboutImg from "../assets/Images/About-img1.jpg";
 import "../styles/about.css";
 
 export default function AboutSection() {
