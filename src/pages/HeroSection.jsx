@@ -44,12 +44,12 @@ export default function HeroSection() {
             <span className="hero-cursor" />
           </p>
           <p className="hero-subtext">
-            I work on selected freelance projects and build practical web applications for
+            I work on freelance projects and build practical web applications for
             real business needs.
           </p>
           <div className="hero-meta">
             <span>Based in Pune, India</span>
-            <span>Selected Freelance Work</span>
+            <span> Freelancer</span>
           </div>
 
           <div className="hero-cta">
