@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
@@ -17,107 +17,108 @@ export default function ContactSection() {
   const [success, setSuccess] = useState(false);
 
   const onSubmit = (data) => {
-  const params = {
-    name: data.name,
-    message: data.message,
+    const params = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+      form_name: data.name,
+      form_email: data.email,
+      title: "Portfolio Contact Request",
+    };
 
-    form_name: data.name,
-    form_email: data.email,
+    toast.loading("Sending message...", { id: "sending" });
+    setLoading(true);
 
-    title: "Portfolio Contact Request",
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        params,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully!", { id: "sending" });
+          setSuccess(true);
+          setLoading(false);
+
+          setTimeout(() => {
+            setSuccess(false);
+            reset();
+          }, 2500);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          toast.error("Failed to send message. Try again later.", {
+            id: "sending",
+          });
+          setLoading(false);
+        }
+      );
   };
 
-  toast.loading("Sending message...", { id: "sending" });
-  setLoading(true);
-emailjs.send(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  params,
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-)
-
-    .then(
-      () => {
-        toast.success("Message sent successfully!", { id: "sending" });
-        setSuccess(true);
-        setLoading(false);
-
-        setTimeout(() => {
-          setSuccess(false);
-          reset();
-        }, 2500);
-      },
-      (error) => {
-        console.error("EmailJS Error:", error);
-        toast.error("Failed to send message. Try again later.", {
-          id: "sending",
-        });
-        setLoading(false);
-      }
-    );
-};
-
-
   return (
-    <section  className="w-full py-16 px-4 bg-[#1f1f1f]" id="contact">
+    <section className="py-24 contact-section" id="contact">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10"
+        viewport={{ once: true, amount: 0.25 }}
+        className="section-shell contact-grid"
       >
-        {/* LEFT SIDE */}
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-white">Contact Us</h2>
-          <p className="text-gray-400">
-            I am always open to discussing new projects, creative ideas, or opportunities.
+        <div className="contact-copy">
+          <span className="section-label">Contact</span>
+          <h2 className="section-title contact-title">Let&apos;s build something that ships fast</h2>
+          <p className="section-subtitle contact-subtitle">
+            Open to internship, full-time roles and selected freelance projects. Share your
+            project goals and I will respond with a practical implementation plan.
           </p>
 
           {[
             {
-              icon: <Mail className="text-blue-400" />,
+              icon: <Mail className="text-sky-300" />,
               text: "vaibhavjadhav5416@gmail.com",
             },
             {
-              icon: <Phone className="text-green-400" />,
-              text: "+91 7498857012",
+              icon: <Phone className="text-emerald-300" />,
+              text: "+91 7498857012 / +91 8600738954",
             },
             {
-              icon: <MapPin className="text-red-400" />,
+              icon: <MapPin className="text-rose-300" />,
               text: "Pune, Maharashtra",
             },
-          ].map((item, i) => (
+          ].map((item) => (
             <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-4 p-4 bg-[#151515] rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.08)] border border-white/10"
+              key={item.text}
+              whileHover={{ y: -2 }}
+              className="contact-item glass-card"
             >
               {item.icon}
-              <span className="text-gray-300 text-lg">{item.text}</span>
+              <span className="contact-item-text">{item.text}</span>
             </motion.div>
           ))}
         </div>
 
-        {/* RIGHT SIDE FORM */}
         <motion.form
           onSubmit={handleSubmit(onSubmit)}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-[#111] p-8 shadow-xl rounded-2xl border border-white/10 space-y-4"
+          viewport={{ once: true, amount: 0.2 }}
+          className="glass-card contact-form"
         >
           {success && (
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center py-10"
+              className="contact-success"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 140, delay: 0.1 }}
-                className="w-20 h-20 rounded-full bg-green-600 flex items-center justify-center"
+                className="contact-success-icon"
               >
                 <svg
                   className="w-12 h-12 text-white"
@@ -135,32 +136,27 @@ emailjs.send(
                 </svg>
               </motion.div>
 
-              <p className="text-green-400 mt-4 text-lg">
-                Message Sent Successfully!
-              </p>
+              <p className="contact-success-text">Message Sent Successfully!</p>
             </motion.div>
           )}
 
-          {/* FORM UI (hidden after success) */}
           {!success && (
             <>
               <div>
-                <label className="text-gray-300 font-semibold">Name</label>
+                <label className="form-label">Name</label>
                 <input
                   type="text"
-                  className="w-full text-white mt-1 p-3 border border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500"
+                  className="form-input"
                   {...register("name", { required: "Name is required" })}
                 />
-                {errors.name && (
-                  <p className="text-red-500 text-sm">{errors.name.message}</p>
-                )}
+                {errors.name && <p className="form-error">{errors.name.message}</p>}
               </div>
 
               <div>
-                <label className="text-gray-300 font-semibold">Email</label>
+                <label className="form-label">Email</label>
                 <input
                   type="email"
-                  className="w-full text-white mt-1 p-3 border border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500"
+                  className="form-input"
                   {...register("email", {
                     required: "Email is required",
                     pattern: {
@@ -169,28 +165,23 @@ emailjs.send(
                     },
                   })}
                 />
-                {errors.email && (
-                  <p className="text-red-500 text-sm">{errors.email.message}</p>
-                )}
+                {errors.email && <p className="form-error">{errors.email.message}</p>}
               </div>
 
               <div>
-                <label className="text-gray-300 font-semibold">Message</label>
+                <label className="form-label">Message</label>
                 <textarea
-                  className="w-full text-white mt-1 p-3 border border-gray-700 rounded-xl h-32 resize-none focus:ring-2 focus:ring-blue-500"
+                  className="form-input form-textarea"
                   {...register("message", { required: "Message is required" })}
                 ></textarea>
-                {errors.message && (
-                  <p className="text-red-500 text-sm">{errors.message.message}</p>
-                )}
+                {errors.message && <p className="form-error">{errors.message.message}</p>}
               </div>
 
               <motion.button
-                whileHover={!loading ? { scale: 1.05 } : {}}
-                whileTap={!loading ? { scale: 0.95 } : {}}
+                whileHover={!loading ? { scale: 1.02 } : {}}
+                whileTap={!loading ? { scale: 0.98 } : {}}
                 disabled={loading}
-                className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold transition 
-                  ${loading ? "bg-gray-600 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}`}
+                className={`contact-submit ${loading ? "is-loading" : ""}`}
               >
                 {loading ? (
                   <span className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>

@@ -1,0 +1,32 @@
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(660px 410px at 86% 15%, rgba(115, 224, 255, 0.2), transparent 62%),
+    radial-gradient(640px 450px at 14% 76%, rgba(255, 191, 116, 0.18), transparent 64%),
+    #060b16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.typewriter {
+  font-size: clamp(18px, 4vw, 34px);
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  color: #edf5ff;
+  font-family: "Syne", sans-serif;
+  text-transform: uppercase;
+}
+
+.cursor {
+  margin-left: 4px;
+  animation: blink 0.9s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

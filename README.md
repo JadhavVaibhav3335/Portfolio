@@ -1,16 +1,50 @@
-# React + Vite
+# Vaibhav Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Professional React + Vite portfolio with:
+- modern section-based layout
+- animated hero + project cards
+- EmailJS contact form
+- responsive design for mobile and desktop
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 19
+- Vite 7
+- Tailwind CSS 4
+- Framer Motion
+- React Hook Form
+- EmailJS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick Start
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
 
-## React Compiler
+## Environment Variables
+Set these in `.env`:
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
+- `npm run dev` - local dev server
+- `npm run build` - production build
+- `npm run preview` - preview production build
+- `npm run lint` - lint project
 
-## Expanding the ESLint configuration
+## Customize Your Portfolio
+1. Update personal copy in `src/pages/HeroSection.jsx` and `src/pages/AboutSection.jsx`.
+2. Replace project data in `src/pages/PortfolioSection.jsx` with real links.
+3. Keep only your strongest 3-5 projects with measurable outcomes.
+4. Update contact details in `src/pages/ContactSection.jsx`.
+5. Replace images in `src/assets/Images`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Strong Portfolio Checklist
+- Clear role headline in first screen (what you do + value).
+- Real project links with problem, solution and impact.
+- Skills shown through projects, not just a long icon list.
+- Fast load time, responsive layout, accessible contrast.
+- Clear CTA: `Hire me`, `View resume`, `Contact`.

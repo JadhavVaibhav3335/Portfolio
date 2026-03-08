@@ -1,70 +1,82 @@
 import { motion } from "framer-motion";
-import aboutImg from "../assets/Images/About-img.jpg";
+import { ArrowUpRight, BookOpenText, Rocket, Sparkles } from "lucide-react";
+import aboutImg from "../assets/Images/About-img.webp";
 import "../styles/about.css";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full bg-[#1a1a1a] text-white py-24 flex justify-center px-8 lg:px-20">
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left Image with Shapes */}
+    <section id="about" className="py-24">
+      <div className="section-shell grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative flex justify-center about-img-wrapper"
+          viewport={{ once: true, amount: 0.35 }}
+          className="relative flex justify-center about-img-wrapper glass-card"
         >
-          <img
-            src={aboutImg}
-            alt="About"
-            className="w-[320px] h-[460px] object-cover z-10"
-          />
+          <img src={aboutImg} alt="Developer portrait" className="about-img" />
         </motion.div>
 
-        {/* Right Content */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="text-3xl font-bold mb-4 border-b pb-2 w-fit">
-            About Me
-          </h2>
+          <span className="section-label">About</span>
+          <h2 className="section-title">Full-stack developer building practical web products</h2>
 
-          <p className="text-gray-300 leading-relaxed mb-6">
-          I'm Vaibhav, a seasoned Fullstack developer driven by the thrill of building robust and dynamic web applications. With expertise spanning both frontend and backend technologies, I infuse projects with versatility and depth, delivering solutions that stand the test of time.
-          </p>
-            I enjoy learning, experimenting, and improving my craft daily. For me, development isn’t just writing code — it’s designing experiences, shaping logic, and building things that people can actually use.
-          <p className="text-gray-300 leading-relaxed mb-8">
-         
+          <p className="section-subtitle">
+            I build end-to-end web applications with strong frontend usability and backend
+            logic, and I focus on clean, maintainable implementation that is easy to scale.
           </p>
 
-  <a
-  href="/Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    neon-btn group relative inline-flex items-center gap-3
-    px-8 py-3 rounded-xl font-semibold text-white
-    bg-white/10 backdrop-blur-md border border-white/20
-    shadow-[0_6px_0px_0px_rgba(255,255,255,0.3)]
-    transition-all duration-300
-    hover:translate-y-[-2px] 
-    active:translate-y-[3px] active:shadow-[0_2px_0px_rgba(255,255,255,0.2)]
-  "
->
-  <span className="text-xl group-hover:scale-110 group-hover:-rotate-6 transition duration-300">
-    📄
-  </span>
+          <div className="about-points">
+            <article className="glass-card about-point">
+              <Rocket size={18} />
+              <p>Built responsive full-stack web applications from scratch with clean architecture.</p>
+            </article>
+            <article className="glass-card about-point">
+              <Sparkles size={18} />
+              <p>Comfortable across frontend and backend workflows with clean UI focus.</p>
+            </article>
+            <article className="glass-card about-point">
+              <BookOpenText size={18} />
+              <p>Actively learning Java ecosystem tools like Spring, Spring Boot and Hibernate.</p>
+            </article>
+          </div>
 
-  <span className="transition-all duration-300 group-hover:translate-x-1">
-    VIEW RESUME
-  </span>
+          <div className="about-skills">
+            {[
+              "HTML",
+              "CSS",
+              "Bootstrap",
+              "JavaScript",
+              "ReactJS",
+              "AngularJS (Basic)",
+              "PHP",
+              "MySQL",
+              "PostgreSQL",
+              "Java",
+              "Python",
+              "Spring Boot",
+              "REST APIs",
+              "GitHub",
+            ].map((skill) => (
+              <span className="pill" key={skill}>
+                {skill}
+              </span>
+            ))}
+          </div>
 
-  {/* Neon border layer */}
-  <span className="neon-border"></span>
-</a>
-
-
+          <a
+            href="/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary mt-8"
+          >
+            View Resume <ArrowUpRight size={18} />
+          </a>
         </motion.div>
       </div>
     </section>

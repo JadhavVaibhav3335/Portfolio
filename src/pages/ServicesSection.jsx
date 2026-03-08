@@ -1,77 +1,66 @@
-import {motion} from "framer-motion";
-import {
-  Laptop,
-  Code,
-  Palette,
-  Smartphone,
-  BadgeCheck,
-  Headset,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { BadgeCheck, Code, Laptop, Palette, Smartphone, Workflow } from "lucide-react";
 
 const services = [
   {
-    icon: <Laptop size={42} />,
-    title: "Web Design",
-    desc: "I design clean, modern, user-focused layouts that balance aesthetics with usability. Every page is crafted to feel intuitive, fast, and visually engaging.",
+    icon: <Laptop size={22} />,
+    title: "Frontend Development",
+    desc: "Responsive UI development with HTML, CSS, JavaScript, Bootstrap and ReactJS.",
   },
   {
-    icon: <Code size={42} />,
-    title: "Web Development",
-    desc: "I build scalable and maintainable web applications using modern tech stacks. From APIs to dynamic UI, I focus on performance, security, and clean architecture.",
+    icon: <Code size={22} />,
+    title: "Full-Stack Applications",
+    desc: "Complete web application development from frontend screens to backend logic and database integration.",
   },
   {
-    icon: <Palette size={42} />,
-    title: "Creative Design",
-    desc: "I create visually compelling designs that communicate your brand's message effectively. My approach combines creativity with strategic thinking to deliver impactful results.",
+    icon: <Palette size={22} />,
+    title: "Dashboard & Portal UI",
+    desc: "Clean management panels and business tools such as employee tracking and admin workflows.",
   },
   {
-    icon: <Smartphone size={42} />,
-    title: "Responsive Design",
-    desc: "I ensure your website looks and functions perfectly on all devices, from desktops to smartphones. My responsive designs provide seamless user experiences across various screen sizes.",
+    icon: <Smartphone size={22} />,
+    title: "Responsive Websites",
+    desc: "Mobile-first web experiences with stable layouts and consistent behavior across devices.",
   },
   {
-    icon: <BadgeCheck size={42} />,
-    title: "Branding Identity",
-    desc: "I develop strong branding identities that resonate with your target audience. From logos to brand guidelines, I help create a cohesive and memorable brand presence.",
+    icon: <BadgeCheck size={22} />,
+    title: "Database Integration",
+    desc: "SQL, MySQL and PostgreSQL based data models with CRUD operations and reliable query handling.",
   },
   {
-    icon: <Headset size={42} />,
-    title: "24/Support",
-    desc: "I provide reliable 24/7 support to ensure your website runs smoothly. Whether it's troubleshooting, updates, or maintenance, I'm here to help you keep your online presence strong.",
+    icon: <Workflow size={22} />,
+    title: "API & Tools",
+    desc: "REST API integration and testing using Postman, plus version control workflows with Git and GitHub.",
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="w-full bg-[#1a1a1a] text-white py-24 flex justify-center px-8 lg:px-20">
-      <div className="max-w-6xl w-full flex flex-col items-center">
-        {/* Heading */}
-        <p className="text-gray-400 text-sm tracking-widest mb-1">
-          What I am Expert In
+    <section id="services" className="py-24 services-section">
+      <div className="section-shell">
+        <span className="section-label">Services</span>
+        <h2 className="section-title">Services based on my project experience</h2>
+        <p className="section-subtitle">
+          I focus on practical software delivery with clean implementation, usability and
+          maintainable code for real-world use cases.
         </p>
-        <h2 className="text-3xl font-bold mb-14 tracking-widest uppercase">
-          My Service
-        </h2>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+        <div className="services-grid">
           {services.map((service, index) => (
             <motion.div
-              key={index}
-              initial={{opacity: 0, y: 40}}
-              whileInView={{opacity: 1, y: 0}}
-              transition={{duration: 0.6, delay: index * 0.1}}
-              viewport={{once: true}}
-              className="bg-[#121212] text-center px-6 py-10 rounded-lg border border-gray-800 hover:border-gray-500 transition"
+              key={service.title}
+              initial={{ opacity: 0, y: 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: index * 0.06 }}
+              viewport={{ once: true, amount: 0.25 }}
+              className="glass-card service-card"
             >
-              <div className="flex justify-center mb-4 text-gray-300">
-                {service.icon}
+              <div className="service-icon">
+                <span>{service.icon}</span>
               </div>
 
-              <h3 className="text-lg font-semibold mb-3">{service.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {service.desc}
-              </p>
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-desc">{service.desc}</p>
             </motion.div>
           ))}
         </div>
