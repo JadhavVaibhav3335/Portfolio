@@ -8,21 +8,40 @@ const projects = [
     title: "Personal Portfolio Website",
     category: "Frontend",
     summary:
-      "Designed and developed a responsive personal portfolio to showcase skills, projects and contact workflow.",
+      "Designed and developed a responsive personal portfolio website to showcase skills, projects, experience, and contact workflow with modern UI animations.",
     stack: ["React", "Tailwind CSS", "Framer Motion", "EmailJS"],
-    code: "https://github.com/jadhavvaibhav3335",
+    code: "https://github.com/JadhavVaibhav3335",
+    demo: "https://portfolio-qv48.vercel.app/",
     accent: "accent-amber",
+  },
+  {
+    title: "Rent Agreement Website",
+    category: "Freelance",
+    summary:
+      "Developed a professional rent agreement service platform featuring city-specific landing pages, lead generation forms, WhatsApp integration, responsive design, and SEO-friendly architecture for improved customer acquisition.",
+    stack: [
+      "Eleventy",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Nunjucks",
+      "SEO",
+    ],
+    code: "https://github.com/JadhavVaibhav3335",
+    demo: "https://rent-agreement-site.onrender.com/",
+    accent: "accent-purple",
   },
   {
     title: "Professional Development Work",
     category: "Professional",
     summary:
-      "Contributed to practical feature development, debugging and delivery support in real development workflows.",
+      "Contributed to practical feature development, debugging, API integration, and delivery support in real-world development workflows.",
     stack: ["JavaScript", "ReactJS", "SQL", "Git", "Postman"],
-    code: "https://github.com/jadhavvaibhav3335",
+    code: "https://github.com/JadhavVaibhav3335",
     accent: "accent-teal",
   },
 ];
+
 
 export default function PortfolioSection() {
   const categories = useMemo(
@@ -90,10 +109,24 @@ export default function PortfolioSection() {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.code} target="_blank" rel="noopener noreferrer">
-                      Code <Github size={16} />
-                    </a>
-                  </div>
+  {project.demo && (
+    <a
+      href={project.demo}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Live Demo
+    </a>
+  )}
+
+  <a
+    href={project.code}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Code <Github size={16} />
+  </a>
+</div>
                 </div>
               </motion.article>
             ))}
