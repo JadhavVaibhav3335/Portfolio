@@ -1,50 +1,42 @@
-# Vaibhav Portfolio
+# Vaibhav Jadhav — Portfolio
 
-Professional React + Vite portfolio with:
-- modern section-based layout
-- animated hero + project cards
-- EmailJS contact form
-- responsive design for mobile and desktop
+A responsive full-stack developer portfolio built with React 19, Vite 7, plain CSS, and Lucide icons. The contact form uses React Hook Form and EmailJS.
 
-## Tech Stack
-- React 19
-- Vite 7
-- Tailwind CSS 4
-- Framer Motion
-- React Hook Form
-- EmailJS
+## Development
 
-## Quick Start
-```bash
-npm install
-cp .env.example .env
+```sh
+npm ci
 npm run dev
 ```
 
-## Environment Variables
-Set these in `.env`:
+## Contact configuration
+
+Copy `.env.example` to `.env` and supply your EmailJS service ID, template ID, and public key. Without these settings, visitors can still use the email and phone links. Never commit `.env`.
+
 ```env
 VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-## Scripts
-- `npm run dev` - local dev server
-- `npm run build` - production build
-- `npm run preview` - preview production build
-- `npm run lint` - lint project
+The EmailJS template receives `name`, `email`, `message`, `form_name`, `form_email`, and `title`.
 
-## Customize Your Portfolio
-1. Update personal copy in `src/pages/HeroSection.jsx` and `src/pages/AboutSection.jsx`.
-2. Replace project data in `src/pages/PortfolioSection.jsx` with real links.
-3. Keep only your strongest 3-5 projects with measurable outcomes.
-4. Update contact details in `src/pages/ContactSection.jsx`.
-5. Replace images in `src/assets/Images`.
+## Commands
 
-## Strong Portfolio Checklist
-- Clear role headline in first screen (what you do + value).
-- Real project links with problem, solution and impact.
-- Skills shown through projects, not just a long icon list.
-- Fast load time, responsive layout, accessible contrast.
-- Clear CTA: `Hire me`, `View resume`, `Contact`.
+- `npm run dev`: start the development server.
+- `npm run build`: create production assets in `dist/`.
+- `npm run preview`: preview the production build.
+- `npm run lint`: check source code with ESLint.
+
+## Content locations
+
+- `src/App.jsx`: navigation, introduction, services, and social links.
+- `src/pages/SelectedWork.jsx`: project details and filters.
+- `src/pages/AboutSection.jsx`: biography, experience, and skills.
+- `src/pages/ContactPanel.jsx`: contact information and form.
+- `src/App.css`: design tokens, component styles, and responsive layouts.
+- `src/index.css`: shared base styles.
+- `src/assets/Images/profile-img.png`: portrait.
+- `public/Vaibhav_jadhav_resume.pdf`: resume.
+
+Build output and dependencies are ignored by Git. Deploy `dist/` to your static hosting provider after building.
