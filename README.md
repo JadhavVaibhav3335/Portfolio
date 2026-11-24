@@ -30,13 +30,17 @@ The EmailJS template receives `name`, `email`, `message`, `form_name`, `form_ema
 
 ## Content locations
 
-- `src/App.jsx`: navigation, introduction, services, and social links.
-- `src/pages/SelectedWork.jsx`: project details and filters.
-- `src/pages/AboutSection.jsx`: biography, experience, and skills.
-- `src/pages/ContactPanel.jsx`: contact information and form.
-- `src/App.css`: design tokens, component styles, and responsive layouts.
-- `src/index.css`: shared base styles.
-- `src/assets/Images/profile-img.png`: portrait.
+- `src/App.jsx`: page composition.
+- `src/components/layout/`: shared header, navigation, and footer.
+- `src/sections/`: hero, projects, skills, about, and contact sections.
+- `src/data/site.js`: shared resume URL and email address.
+- `src/data/projects.js`: project descriptions, technologies, and links.
+- `src/data/expertise.js`: services and capabilities.
+- `src/data/skills.js`: skill groups and learning topics.
+- `src/styles/portfolio.css`: design tokens, component styles, and responsive layouts.
+- `src/styles/base.css`: shared base styles.
+- `src/assets/images/profile-img.png`: portrait.
 - `public/Vaibhav_jadhav_resume.pdf`: resume.
+- `public/Resume.pdf`: compatibility copy for existing bookmarks; update both PDFs when replacing the resume.
 
 Build output and dependencies are ignored by Git. Deploy `dist/` to your static hosting provider after building.

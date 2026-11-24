@@ -1,0 +1,1 @@
+export const skillGroups = [['Frontend', 'HTML, CSS, Bootstrap, JavaScript, ReactJS, AngularJS (basic)'], ['Backend & data', 'PHP, Java, Python, SQL, MySQL, PostgreSQL, REST APIs'], ['Tools', 'Git, GitHub, Postman'], ['Currently learning', 'Spring, Spring Boot, Hibernate']];
