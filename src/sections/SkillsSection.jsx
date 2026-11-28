@@ -1,4 +1,5 @@
-import { expertise } from '../data/expertise';
+import { skillGroups } from '../data/skills';
+const context = ['Applied in internship and website projects; AngularJS at a basic level.', 'Backend and database skills. Featured projects focus on frontend and static website delivery.', 'Version control, collaboration, and API testing tools.', 'Learning in progress.'];
 export default function SkillsSection() {
-  return <section className="expertise wrap" id="services"><div className="section-heading"><div><p className="eyebrow">SKILLS & SERVICES</p><h2>From interface to database.</h2></div><p>The tools and workflows<br />behind my development work.</p></div><div className="capability-grid">{expertise.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}</div></section>;
+return <section className="expertise wrap" id="services" aria-labelledby="skills-title"><div className="section-heading"><div><p className="eyebrow">TECHNICAL SKILLS</p><h2 id="skills-title">My development toolkit.</h2></div><p>Project experience in React and web delivery.<br />Building deeper backend knowledge.</p></div><dl className="toolkit">{skillGroups.map(([title, skills], index) => <div key={title}><dt>{title}</dt><dd>{skills}</dd><dd className="skill-context">{context[index]}</dd></div>)}</dl></section>;
 }
